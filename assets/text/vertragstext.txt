@@ -35,7 +35,7 @@ Für den Verleih erhebt der Leihgeber nach § 598 BGB keine Leihgebühr.
 
 §5 Sorgfaltspflicht und Haftung bei Schäden
 
-1. Der leihnehmer verpflichtet sich zu besonderer Sorgfalt im Umgang mit den 
+1. Der Leihnehmer verpflichtet sich zu besonderer Sorgfalt im Umgang mit den
 Leihobjekten. Sollte die Leihobjekte durch unsachgemäße Behandlung beschädigt werden,
 dann haftet der Leihnehmer für den entstandenen Schaden. Dies gilt auch bei Verlust.
 Der Leihnehmer verpflichtet sich, für ausreichenden Diebstahlschutz zu sorgen.
@@ -45,7 +45,7 @@ angeeigt werden.
 
 §6 Rücktritt
 
-Der leihgeber ist zum sofortigen Rücktritt vom Vertrag berechtigt, wenn
+Der Leihgeber ist zum sofortigen Rücktritt vom Vertrag berechtigt, wenn
 Vertragsbedingungen verletzt werden. Die geliehenen Objekte müssen sofort 
 an den Leihgeber zurückgegeben werden.
 
