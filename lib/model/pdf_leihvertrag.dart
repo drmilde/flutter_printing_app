@@ -8,7 +8,7 @@ class PdfLeihvertrag {
     final Document doc = Document();
     final PdfImage assetImage = await pdfImageFromImageProvider(
       pdf: doc.document,
-      image: const material.AssetImage('assets/images/ludwigvan.png'),
+      image: const material.AssetImage('assets/images/ll_neues_logo.png'),
     );
 
     doc.addPage(MultiPage(
@@ -16,7 +16,6 @@ class PdfLeihvertrag {
             PdfPageFormat.a4.copyWith(marginBottom: 1.5 * PdfPageFormat.cm),
         crossAxisAlignment: CrossAxisAlignment.start,
         build: (Context context) => <Widget>[
-              //Image(assetImage),
               _buildCenteredText("Leihvertrag", 20),
               _spacer(20),
               _buildCenteredText(
@@ -46,13 +45,20 @@ class PdfLeihvertrag {
                 10,
                 fontStyle: FontStyle.italic,
               ),
+              _spacer(20),
+              Center(
+                child: Container(
+                  width: 100,
+                  child: Image(assetImage),
+                ),
+              ),
               _spacer(30),
               _buildCenteredText(
                 "wird folgender Leihvertrag geschlossen:",
                 15,
                 fontStyle: FontStyle.italic,
               ),
-              _spacer(40),
+              _spacer(220),
               _buildParagraph("§1 Überlassung"),
               _spacer(20),
               Paragraph(
@@ -63,8 +69,8 @@ class PdfLeihvertrag {
               Table.fromTextArray(context: context, data: const <List<String>>[
                 <String>['Datum', 'Bezeichnung', 'Beschreibung'],
                 <String>['17.01.2020', 'Rasenmäher', 'Der grüne Rasenmäher'],
-                <String>['17.01.2020', 'Rasenmäher', 'Der grüne Rasenmäher'],
-                <String>['17.01.2020', 'Rasenmäher', 'Der grüne Rasenmäher'],
+                <String>['17.01.2020', 'Bobbycar', 'Das rote Bobbycar'],
+                <String>['17.01.2020', 'Eismaschine', 'Speiseeis ist lecker.'],
               ]),
               _spacer(20),
               Paragraph(
@@ -83,7 +89,9 @@ class PdfLeihvertrag {
                     " unberechtigte Dritte vermietet oder verkauft werden."
                     "",
               ),
+              _spacer(20),
               _buildParagraph("§2 Zweck der Leihe"),
+              _spacer(20),
               Paragraph(
                 text: "Der Zweck der Leihe ist folgender:"
                     "",
@@ -158,7 +166,6 @@ class PdfLeihvertrag {
                     " folgendes Unternehmen: ________________"
                     "",
               ),
-
               _spacer(20),
               _buildParagraph("§8 Zusätzliche Vereinbarungen"),
               _spacer(20),

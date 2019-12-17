@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_printing_app/model/pdf_leihvertrag.dart';
-import 'package:pdf/pdf.dart';
-import 'package:pdf/widgets.dart' as pdf;
 import 'package:printing/printing.dart';
 
 class HomeScreen extends StatelessWidget {
