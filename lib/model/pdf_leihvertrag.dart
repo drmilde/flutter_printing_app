@@ -24,7 +24,7 @@ class PdfLeihvertrag {
                 10,
                 fontStyle: FontStyle.italic,
               ),
-              _spacer(40),
+              _spacer(30),
               _buildCenteredText("______________________________", 15),
               _spacer(20),
               _buildCenteredText("______________________________", 15),
@@ -46,7 +46,7 @@ class PdfLeihvertrag {
                 10,
                 fontStyle: FontStyle.italic,
               ),
-              _spacer(20),
+              _spacer(30),
               _buildCenteredText(
                 "wird folgender Leihvertrag geschlossen:",
                 15,
@@ -64,6 +64,12 @@ class PdfLeihvertrag {
                     "1. Der Leihgeber stellt dem Leihnehmer folgende Objekte leihweise"
                     " zur Verfügung: ",
               ),
+              Table.fromTextArray(context: context, data: const <List<String>>[
+                <String>['Datum', 'Bezeichnung', 'Beschreibung'],
+                <String>['17.01.2020', 'Rasenmäher', 'Der grüne Rasenmäher'],
+                <String>['17.01.2020', 'Rasenmäher', 'Der grüne Rasenmäher'],
+                <String>['17.01.2020', 'Rasenmäher', 'Der grüne Rasenmäher'],
+              ]),
               _spacer(20),
               Paragraph(
                 text: "2. Der Gesamtwert der Leihobjekte beträgt  __________"
