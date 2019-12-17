@@ -88,6 +88,7 @@ class PdfLeihvertrag {
                 text: "Der Zweck der Leihe ist folgender:"
                     "",
               ),
+              _spacer(20),
               _buildParagraph("§3 Leihzeit"),
               _spacer(20),
               Paragraph(
@@ -105,6 +106,7 @@ class PdfLeihvertrag {
                     " gestellt werden."
                     "",
               ),
+              _spacer(20),
               _buildParagraph("§4 Leihgebühr"),
               _spacer(20),
               Paragraph(
@@ -112,6 +114,7 @@ class PdfLeihvertrag {
                     " keine Leihgebühr."
                     "",
               ),
+              _spacer(20),
               _buildParagraph("§5 Sorgfaltspflicht und Haftung bei Schäden"),
               _spacer(20),
               Paragraph(
@@ -141,7 +144,9 @@ class PdfLeihvertrag {
                     " an den Leihgeber zurückgegeben werden."
                     "",
               ),
+              _spacer(20),
               _buildParagraph("§7 Versicherungen"),
+              _spacer(20),
               Paragraph(
                 text: "1. Für die Versicherung der Leihobjekte ist"
                     " der Leihnehmer zuständig. Die"
@@ -154,6 +159,7 @@ class PdfLeihvertrag {
                     "",
               ),
 
+              _spacer(20),
               _buildParagraph("§8 Zusätzliche Vereinbarungen"),
               _spacer(20),
               Paragraph(
@@ -161,6 +167,7 @@ class PdfLeihvertrag {
                     " Folgendes vereinbart:"
                     "",
               ),
+              _spacer(20),
               _buildParagraph("§9 ......"),
               _spacer(20),
               _spacer(50),
@@ -186,14 +193,6 @@ class PdfLeihvertrag {
                 text: "Unterschrift Leihnehmer"
                     "",
               ),
-              _spacer(200),
-              Header(level: 0, text: "Eine Überschrift"),
-              Paragraph(
-                  text:
-                      "Lorem ipsum und so weiter, hier sollte ein langer Text stehen. "
-                      "Lorem ipsum und so weiter, hier sollte ein langer Text stehen. "
-                      "Lorem ipsum und so weiter, hier sollte ein langer Text stehen. "
-                      "Lorem ipsum und so weiter, hier sollte ein langer Text stehen. "),
             ]));
 
     //final File file = File("example.pdf");
