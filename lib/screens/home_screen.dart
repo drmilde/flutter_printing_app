@@ -4,12 +4,13 @@ import 'package:printing/printing.dart';
 
 class HomeScreen extends StatelessWidget {
   PdfLeihvertrag vertrag = PdfLeihvertrag();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Printing Demo'),
+          title: const Text('Vertragsdemo'),
         ),
         floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.print),

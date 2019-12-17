@@ -6,6 +6,7 @@ import 'package:printing/printing.dart';
 class PdfLeihvertrag {
   Future<List<int>> buildPages(PdfPageFormat format) async {
     final Document doc = Document();
+
     final PdfImage assetImage = await pdfImageFromImageProvider(
       pdf: doc.document,
       image: const material.AssetImage('assets/images/ll_neues_logo.png'),
@@ -15,6 +16,8 @@ class PdfLeihvertrag {
         pageFormat:
             PdfPageFormat.a4.copyWith(marginBottom: 1.5 * PdfPageFormat.cm),
         crossAxisAlignment: CrossAxisAlignment.start,
+        header: (context) => _buildCenteredText("Ein Leihvertrag des Leihladen Fuldas", 10),
+        footer: (context) => _buildCenteredText("Ein Leihvertrag des Leihladen Fuldas", 10),
         build: (Context context) => <Widget>[
               _buildCenteredText("Leihvertrag", 20),
               _spacer(20),
@@ -58,7 +61,7 @@ class PdfLeihvertrag {
                 15,
                 fontStyle: FontStyle.italic,
               ),
-              _spacer(220),
+              _spacer(150),
               _buildParagraph("§1 Überlassung"),
               _spacer(20),
               Paragraph(
