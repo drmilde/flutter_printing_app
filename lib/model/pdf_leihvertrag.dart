@@ -3,7 +3,12 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 import 'package:printing/printing.dart';
 
+import 'vertragsdaten.dart';
+
 class PdfLeihvertrag {
+  Vertragsdaten daten = Vertragsdaten();
+
+
   Future<List<int>> buildPages(PdfPageFormat format) async {
     final Document doc = Document();
 
@@ -25,9 +30,9 @@ class PdfLeihvertrag {
             fontStyle: FontStyle.italic,
           ),
           _spacer(30),
-          _buildCenteredText("______________________________", 15),
+          _buildCenteredText("${daten.vorname} ${daten.nachname}", 15),
           _spacer(20),
-          _buildCenteredText("______________________________", 15),
+          _buildCenteredText("${daten.adresse}", 15),
           _spacer(10),
           _buildCenteredText(
             "- im Folgenden Leihnehmer genannt -",
@@ -37,9 +42,9 @@ class PdfLeihvertrag {
           _spacer(50),
           _buildCenteredText("und", 15),
           _spacer(40),
-          _buildCenteredText("Leihladen Fulda ______________", 15),
+          _buildCenteredText("Leihladen Fulda", 15),
           _spacer(20),
-          _buildCenteredText("Bürgerbüro Ziehers ___________", 15),
+          _buildCenteredText("Bürgerbüro Ziehers", 15),
           _spacer(10),
           _buildCenteredText(
             "- im Folgenden Leihgeber genannt -",
