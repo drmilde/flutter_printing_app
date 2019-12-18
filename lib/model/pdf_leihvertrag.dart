@@ -12,56 +12,92 @@ class PdfLeihvertrag {
       image: const material.AssetImage('assets/images/ll_neues_logo.png'),
     );
 
+    doc.addPage(Page(
+      pageFormat:
+          PdfPageFormat.a4.copyWith(marginBottom: 1.5 * PdfPageFormat.cm),
+      build: (Context context) => Column(
+        children: <Widget>[
+          _buildCenteredText("Leihvertrag", 20),
+          _spacer(20),
+          _buildCenteredText(
+            "zwischen",
+            10,
+            fontStyle: FontStyle.italic,
+          ),
+          _spacer(30),
+          _buildCenteredText("______________________________", 15),
+          _spacer(20),
+          _buildCenteredText("______________________________", 15),
+          _spacer(10),
+          _buildCenteredText(
+            "- im Folgenden Leihnehmer genannt -",
+            10,
+            fontStyle: FontStyle.italic,
+          ),
+          _spacer(50),
+          _buildCenteredText("und", 15),
+          _spacer(40),
+          _buildCenteredText("Leihladen Fulda ______________", 15),
+          _spacer(20),
+          _buildCenteredText("Bürgerbüro Ziehers ___________", 15),
+          _spacer(10),
+          _buildCenteredText(
+            "- im Folgenden Leihgeber genannt -",
+            10,
+            fontStyle: FontStyle.italic,
+          ),
+          _spacer(40),
+          Center(
+            child: Container(
+              width: 100,
+              child: Image(assetImage),
+            ),
+          ),
+          _spacer(40),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: 100,
+                    child: Image(assetImage),
+                  ),
+                  _spacer(20),
+                  Text("QR Vertrag"),
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: 100,
+                    child: Image(assetImage),
+                  ),
+                  _spacer(20),
+                  Text("QR Leihnehmer"),
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Container(
+                    width: 100,
+                    child: Image(assetImage),
+                  ),
+                  _spacer(20),
+                  Text("QR Leihliste"),
+                ],
+              ),
+            ],
+          )
+        ],
+      ),
+    ));
+
     doc.addPage(MultiPage(
         pageFormat:
             PdfPageFormat.a4.copyWith(marginBottom: 1.5 * PdfPageFormat.cm),
         crossAxisAlignment: CrossAxisAlignment.start,
-        header: (context) => _buildCenteredText("Ein Leihvertrag des Leihladen Fuldas", 10),
-        footer: (context) => _buildCenteredText("Ein Leihvertrag des Leihladen Fuldas", 10),
         build: (Context context) => <Widget>[
-              _buildCenteredText("Leihvertrag", 20),
-              _spacer(20),
-              _buildCenteredText(
-                "zwischen",
-                10,
-                fontStyle: FontStyle.italic,
-              ),
-              _spacer(30),
-              _buildCenteredText("______________________________", 15),
-              _spacer(20),
-              _buildCenteredText("______________________________", 15),
-              _spacer(10),
-              _buildCenteredText(
-                "- im Folgenden Leihnehmer genannt -",
-                10,
-                fontStyle: FontStyle.italic,
-              ),
-              _spacer(50),
-              _buildCenteredText("und", 15),
-              _spacer(40),
-              _buildCenteredText("Leihladen Fulda ______________", 15),
-              _spacer(20),
-              _buildCenteredText("Bürgerbüro Ziehers ___________", 15),
-              _spacer(10),
-              _buildCenteredText(
-                "- im Folgenden Leihgeber genannt -",
-                10,
-                fontStyle: FontStyle.italic,
-              ),
-              _spacer(20),
-              Center(
-                child: Container(
-                  width: 100,
-                  child: Image(assetImage),
-                ),
-              ),
-              _spacer(30),
-              _buildCenteredText(
-                "wird folgender Leihvertrag geschlossen:",
-                15,
-                fontStyle: FontStyle.italic,
-              ),
-              _spacer(150),
               _buildParagraph("§1 Überlassung"),
               _spacer(20),
               Paragraph(
